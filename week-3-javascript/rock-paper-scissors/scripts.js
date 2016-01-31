@@ -2,6 +2,14 @@
 //console.log("hello");
 
 function play(){
+	$("#computer_rock").hide();
+	$("#computer_paper").hide();
+	$("#computer_scissors").hide();
+
+	$("#user_rock").hide();
+	$("#user_paper").hide();
+	$("#user_scissors").hide();
+
 	var user_input = $("#user-input");
 	var user_move  = user_input.val();
 	console.log("user_move: ", user_move);
@@ -10,23 +18,28 @@ function play(){
 	var i = Math.floor((Math.random() * 3));
 	console.log(i);
 	var computer_move = possible_moves[i];
-	$("#computer_move").html("<img src='"+computer_move+".png'>");	
 	console.log(computer_move);
 
 	var outcome;
 
+	console.log("#computer_"+computer_move);
+
 	if(computer_move === user_move){
+		$("#computer_"+computer_move).show();
+		$("#user_"+user_move).show();
 		outcome = "draw";
 	}else {
 		if(user_move === "rock"){
-			$("#user_move").html("<img src='rock.png'>");	
+			$("#computer_"+computer_move).show();
+			$("#user_"+user_move).show();
 			if(computer_move === "paper"){
 				outcome = "Computer wins";
 			}else{
 				outcome = "User wins";
 			}
 		}else if(user_move === "paper"){
-			$("#user_move").html("<img src='paper.png'>");	
+			$("#computer_"+computer_move).show();
+			$("#user_"+user_move).show();
 			if(computer_move === "scissors"){
 				outcome = "Computer wins";
 			}else{
@@ -34,7 +47,8 @@ function play(){
 			}
 
 		}else if(user_move === "scissors"){
-			$("#user_move").html("<img src='scissors.png'>");	
+			$("#computer_"+computer_move).show();
+			$("#user_"+user_move).show();
 			if(computer_move === "rock"){
 				outcome = "Computer wins";
 			}else{

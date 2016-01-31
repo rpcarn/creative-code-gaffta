@@ -7,15 +7,21 @@
 <body>
 
 <h1 id="headerid">Rock Paper Scissors</h1>
-<p>Play rock paper scissors against a computer.</p>
+<p>Type rock, paper, or scissors in lowercase below to play the game..</p>
 <input id = 'user-input'>
 <button onClick='play()'>Play!</button>
 <br><br>
-<div id="user_move"></div>
-<div id="computer_move"></div>
+<!--div id="user_move"></div-->
+<!--div id="computer_move"></div-->
+<div id="user_rock" style="display:none;"><img src="rock.png"></div>
+<div id="user_paper" style="display:none;"><img src="paper.png"></div>
+<div id="user_scissors" style="display:none;"><img src="scissors.png"></div>
+<div id="computer_rock" style="display:none;"><img src="rock.png"></div>
+<div id="computer_paper" style="display:none;"><img src="paper.png"></div>
+<div id="computer_scissors" style="display:none;"><img src="scissors.png"></div>
 <div id="outcome"><b>Outcome: </b></div>
 
-<script type="text/javascript" src="scripts/scripts.js"></script>
+<script type="text/javascript" src="scripts.js"></script>
 
 
 </body>
